@@ -1,11 +1,16 @@
+<#include 'footer.ftl'>
+<#include 'static/styles.css'>
+<#include 'static/script.js'>
+
 <#macro boilerplate>
-    <html>
+    <!DOCTYPE html>
     <head>
         <title>${title}</title>
+        <link rel="stylesheet" href="static/styles.css">
+        <script src="static/script.js"></script>
     </head>
     <body>
-    <h1>Welcome!</h1>
     <#nested>
+    <@footer></@footer>
     </body>
-    </html>
 </#macro>

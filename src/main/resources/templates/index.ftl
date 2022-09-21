@@ -1,2 +1,6 @@
-<#import 'boilerplate.ftl' as boilerplate>
+<#include 'boilerplate.ftl'>
+
+<@boilerplate>
+<p>Hello, ${user.username}</p>
+</@boilerplate>
 

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  inventorio_database:
+    image: postgres:11
+    ports:
+      - "5555:5432"
+    environment:
+      - POSTGRES_USER=inventorio_user
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=inventorio_db
+
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - inventorio_database

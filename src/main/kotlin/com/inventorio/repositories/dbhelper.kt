@@ -1,10 +1,16 @@
 package com.inventorio.repositories
 
-import org.ktorm.database.Database
+import org.jetbrains.exposed.sql.Database
 
-fun dbconnect(): Database {
-    val password = System.getenv("secrets.env")
-    val database = Database.connect("jdbc:mysql://localhost:3306/ktorm", user = "root", password = password)
+fun dbconnection(): Database {
+    val host = "localhost"
+    val port = 5555
+    val dbName = "inventorio_db"
+    val dbUser = "inventorio_user"
+    val password = "password123!"
 
-    return database;
+    val db = Database.connect("jdbc:postgresql://$host:$port/$dbName", driver = "org.postgresql.Driver",
+                                user = dbUser, password = password)
+
+    return db
 }
